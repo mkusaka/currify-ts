@@ -7,7 +7,8 @@ function twoArgFunc(a: number, b: string) {
 describe("2 args func work", () => {
   it("works", () => {
     const curriedTwoArgFunc = currify(twoArgFunc);
-    expect(curriedTwoArgFunc(3)("test")).toMatchInlineSnapshot(`"3test"`);
+    const curriedOneArgFunc = curriedTwoArgFunc(3)
+    expect(curriedOneArgFunc("test")).toMatchInlineSnapshot(`"3test"`);
   });
 });
 
